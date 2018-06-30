@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = SignInActivity.class.getSimpleName();
-    private static final int RC_SIGN_IN = 9000 ;
+    private static final int RC_SIGN_IN = 9000;
     private GoogleSignInClient mGoogleSignInClient;
 
     @Override
@@ -48,18 +48,20 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void updateUI(GoogleSignInAccount account) {
 
         String message;
-        if (account != null)
+        if (account != null) {
             message = "Logged in as: " + account.getDisplayName();
-        else
+
+            Intent mainActivityIntent = new Intent(this, MainActivity.class);
+            //Bundle accountBundle = new Bundle();
+            //accountBundle.putParcelable("accountBundle", account);
+            mainActivityIntent.putExtra(Constants.SIGN_IN_ACCOUNT, account);
+            startActivity(mainActivityIntent);
+        } else {
             message = "Login failed";
+        }
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
 
-        Intent mainActivityIntent = new Intent(this, MainActivity.class);
-        //Bundle accountBundle = new Bundle();
-        //accountBundle.putParcelable("accountBundle", account);
-        mainActivityIntent.putExtra(Intent.EXTRA_USER, account);
-        startActivity(mainActivityIntent);
 
     }
 
