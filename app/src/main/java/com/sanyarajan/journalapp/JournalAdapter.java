@@ -117,7 +117,7 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.JournalV
      * When data changes, this method updates the list of journalEntries
      * and notifies the adapter to use the new values on it
      */
-    public void setTasks(List<JournalEntry> journalEntries) {
+    public void setJournalEntries(List<JournalEntry> journalEntries) {
         mJournalEntries = journalEntries;
         notifyDataSetChanged();
     }

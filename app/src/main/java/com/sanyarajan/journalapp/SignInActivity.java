@@ -49,18 +49,18 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         String message;
         if (account != null) {
-            message = "Logged in as: " + account.getDisplayName();
+            message = "Logged in as " + account.getDisplayName();
 
             Intent mainActivityIntent = new Intent(this, MainActivity.class);
             //Bundle accountBundle = new Bundle();
             //accountBundle.putParcelable("accountBundle", account);
             mainActivityIntent.putExtra(Constants.SIGN_IN_ACCOUNT, account);
             startActivity(mainActivityIntent);
-        } else {
-            message = "Login failed";
+
+            Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+            toast.show();
         }
-        Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
-        toast.show();
+
 
 
     }
@@ -99,7 +99,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
+            Log.i(TAG, "Successfully logged in" );
             // Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {

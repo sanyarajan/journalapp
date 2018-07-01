@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements JournalAdapter.It
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    @SuppressWarnings("FieldCanBeLocal")
     private GoogleSignInAccount mSignInAccount;
     private GoogleSignInClient mGoogleSignInClient;
     private JournalAdapter mAdapter;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements JournalAdapter.It
             @Override
             public void onChanged(@Nullable List<JournalEntry> journalEntries) {
                 Log.d(TAG, "Updating list of journal entries from LiveData in ViewModel");
-                mAdapter.setTasks(journalEntries);
+                mAdapter.setJournalEntries(journalEntries);
             }
         });
     }

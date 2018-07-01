@@ -8,6 +8,8 @@
     <string name="add_button">Add</string>
     <string name="updated_at">Updated:</string>
     <string name="created_at">Created:</string>
-    <string name="journal_entry_text_hint">Your thoughts...</string>
+    <string name="journal_entry_text_hint">Your thoughts…</string>
     <string name="journal_entry_title_hint">Journal entry title</string>
+    <string name="journal_image_content_description">Journal image</string>
+    <string name="help_text">Use the add button to add new journal entries.\nTap on an entry to edit it.\nSwipe left or right to delete entries.\nSign in below to begin.</string>
 </resources>
