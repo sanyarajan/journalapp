@@ -15,7 +15,7 @@ Android SDK and Android Studio
 
 ## Deployment
 
-The apk is int he root of the repo or can be downloaded from https://drive.google.com/open?id=1oCwyX8A8hy1g1kVYmWNUdnEvdjzGPm5P
+The apk is in the root of the repo or can be downloaded from https://drive.google.com/open?id=1oCwyX8A8hy1g1kVYmWNUdnEvdjzGPm5P
 
 
 ## Authors
